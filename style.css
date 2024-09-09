@@ -24,7 +24,7 @@ body {
 header {
     background: linear-gradient(135deg, #3498db, #2c3e50);
     color: white;
-    padding: 100px 0;
+    padding: 80px 0;
     text-align: center;
     position: relative;
 }
@@ -33,15 +33,17 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap; /* Allows it to wrap in smaller screens */
 }
 
 .hero-text {
     flex: 1;
     text-align: left;
+    margin-bottom: 20px;
 }
 
 .hero-title {
-    font-size: 4em;
+    font-size: 3em; /* Adjusted for better scaling */
     font-weight: 700;
     letter-spacing: 2px;
     margin-bottom: 10px;
@@ -58,11 +60,12 @@ header {
     flex: 0.4;
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .profile-image img {
-    width: 250px;
-    height: 250px;
+    width: 200px; /* Adjusted for mobile */
+    height: 200px;
     border-radius: 50%;
     border: 5px solid white;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -75,11 +78,12 @@ header {
 
 nav ul {
     list-style: none;
+    padding: 20px 0;
 }
 
 nav ul li {
     display: inline-block;
-    margin: 0 20px;
+    margin: 0 15px;
 }
 
 nav ul li a {
@@ -144,7 +148,7 @@ nav ul li a:hover {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
     gap: 40px;
 }
 
@@ -233,4 +237,34 @@ footer {
 
 footer p {
     margin-bottom: 0;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column; /* Stack items on mobile */
+    }
+
+    .hero-text {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .hero-title {
+        font-size: 2.5em;
+    }
+
+    .profile-image img {
+        width: 180px;
+        height: 180px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        display: block;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr; /* One column on mobile */
+    }
 }
